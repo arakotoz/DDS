@@ -243,6 +243,9 @@ endif(Boost_FOUND)
 #
 find_package(Absl REQUIRED CONFIG)
 find_package(Protobuf REQUIRED CONFIG)
+if(protobuf_MODULE_COMPATIBLE)
+  include("${CMAKE_CURRENT_LIST_DIR}/protobuf-module.cmake")
+endif()
 add_subdirectory(proto)
 
 # DDS Misc Common
