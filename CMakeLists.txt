@@ -244,7 +244,7 @@ endif(Boost_FOUND)
 find_package(Absl REQUIRED CONFIG)
 find_package(Protobuf REQUIRED CONFIG)
 if(Protobuf_FOUND)
-  include("${Protobuf_DIR}/protobuf-module.cmake")
+  include("${PROTOBUF_ROOT}/lib/cmake/protobuf/protobuf-module.cmake")
 endif()
 add_subdirectory(proto)
 
