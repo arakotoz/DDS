@@ -241,7 +241,8 @@ endif(Boost_FOUND)
 #
 # Search for protobuf
 #
-find_package(Protobuf 3.15 REQUIRED)
+find_package(Absl REQUIRED CONFIG)
+find_package(Protobuf REQUIRED CONFIG)
 add_subdirectory(proto)
 
 # DDS Misc Common
