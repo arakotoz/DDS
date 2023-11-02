@@ -241,15 +241,13 @@ endif(Boost_FOUND)
 #
 # Search for protobuf
 #
-find_package(Absl REQUIRED CONFIG)
-if(Absl_FOUND)
-  message(STATUS "Add to includes ${Absl_INCLUDE_DIRS}")
-endif()
+find_package(absl CONFIG)
+set(protobuf_MODULE_COMPATIBLE TRUE)
 find_package(Protobuf REQUIRED CONFIG)
-if(Protobuf_FOUND)
-  message(STATUS "Add to includes ${Protobuf_INCLUDE_DIRS}/../lib/cmake/protobuf/protobuf-module.cmake")
-  include(${Protobuf_INCLUDE_DIRS}/../lib/cmake/protobuf/protobuf-module.cmake)
-endif()
+#if(Protobuf_FOUND)
+#  message(STATUS "Add to includes ${Protobuf_INCLUDE_DIRS}/../lib/cmake/protobuf/protobuf-module.cmake")
+#  include(${Protobuf_INCLUDE_DIRS}/../lib/cmake/protobuf/protobuf-module.cmake)
+#endif()
 add_subdirectory(proto)
 
 # DDS Misc Common

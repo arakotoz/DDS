@@ -16,14 +16,13 @@ add_library(dds_proto_lib ${PROTO_SRCS} ${PROTO_INCL})
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-  ${Protobuf_LIBRARIES}
+  protobuf::libprotobuf
 )
 
 target_include_directories(${PROJECT_NAME}
   PUBLIC
   $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
   ${Protobuf_INCLUDE_DIRS}
-  ${Absl_INCLUDE_DIRS}
 )
 
 install(TARGETS ${PROJECT_NAME}
