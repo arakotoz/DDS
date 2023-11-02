@@ -27,9 +27,7 @@ namespace dds::misc
         };
 
         template <typename _Result, typename _Class, typename _Argument>
-        class mem_fun1_t : public std::binary_function<_Class*,
-                                                       typename remove_cref<_Argument>::type, // was: Argument
-                                                       _Result>
+        class mem_fun1_t
         {
           public:
             explicit mem_fun1_t(_Result (_Class::*member)(_Argument))
@@ -62,7 +60,7 @@ namespace dds::misc
          *
          */
         template <class _Pair>
-        struct select1st : public std::unary_function<_Pair, typename _Pair::first_type>
+        struct select1st
         {
             typename _Pair::first_type& operator()(_Pair& __x) const
             {
@@ -79,7 +77,7 @@ namespace dds::misc
          *
          */
         template <class _Pair>
-        struct select2nd : public std::unary_function<_Pair, typename _Pair::second_type>
+        struct select2nd
         {
             typename _Pair::second_type& operator()(_Pair& __x) const
             {
