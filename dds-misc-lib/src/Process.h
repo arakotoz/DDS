@@ -390,7 +390,7 @@ namespace dds::misc
  *
  */
 #if !defined(__APPLE__)
-    struct SFindName : public std::binary_function<CProcList::ProcContainer_t::value_type, std::string, bool>
+    struct SFindName 
     {
         bool operator()(CProcList::ProcContainer_t::value_type _pid, const std::string& _Name) const
         {
