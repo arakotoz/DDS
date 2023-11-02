@@ -216,7 +216,7 @@ namespace dds::misc
             return std::toupper(c);
         }
     };
-    struct IsDigit : std::unary_function<int, int>
+    struct IsDigit 
     {
         int operator()(int c) const
         {
