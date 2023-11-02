@@ -23,6 +23,7 @@ target_include_directories(${PROJECT_NAME}
   PUBLIC
   $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
   ${Protobuf_INCLUDE_DIRS}
+  ${Absl_INCLUDE_DIRS}
 )
 
 install(TARGETS ${PROJECT_NAME}
